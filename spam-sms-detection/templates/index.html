@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spam SMS Detector</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <main class="card">
+    <h1>Spam SMS Detector</h1>
+    <p class="subtitle">Paste an SMS message to check whether it is spam.</p>
+
+    <label for="message">SMS message</label>
+    <textarea id="message" rows="7" placeholder="Type or paste your SMS message here..."></textarea>
+
+    <div class="buttons">
+      <button id="checkBtn" class="btn primary">Check Message</button>
+      <button id="clearBtn" class="btn secondary">Clear</button>
+    </div>
+
+    <div id="result" class="result hidden" aria-live="polite">
+      <div id="label" class="label"></div>
+      <div class="confidence-text">Confidence: <strong id="confidence"></strong></div>
+      <div class="bar"><div id="barFill" class="bar-fill"></div></div>
+    </div>
+
+    <p id="error" class="error hidden"></p>
+  </main>
+
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

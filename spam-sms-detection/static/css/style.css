@@ -1,0 +1,79 @@
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+}
+
+.card {
+  width: 100%;
+  max-width: 600px;
+  background: #fff;
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+}
+
+h1 { margin: 0 0 6px; color: #1e293b; font-size: 1.8rem; }
+.subtitle { margin: 0 0 24px; color: #64748b; }
+
+label { display: block; margin-bottom: 8px; font-weight: 600; color: #334155; }
+
+textarea {
+  width: 100%;
+  padding: 14px;
+  font-size: 1rem;
+  font-family: inherit;
+  border: 2px solid #cbd5e1;
+  border-radius: 10px;
+  resize: vertical;
+  min-height: 150px;
+}
+textarea:focus { outline: none; border-color: #3b82f6; }
+
+.buttons { display: flex; gap: 12px; margin-top: 16px; }
+
+.btn {
+  flex: 1;
+  padding: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.1s;
+}
+.btn:hover { opacity: 0.9; }
+.btn:active { transform: scale(0.98); }
+.btn:disabled { opacity: 0.6; cursor: not-allowed; }
+.primary { background: #2563eb; color: #fff; }
+.secondary { background: #e2e8f0; color: #334155; }
+
+.result {
+  margin-top: 24px;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+}
+.result.spam { background: #fee2e2; color: #991b1b; }
+.result.safe { background: #dcfce7; color: #166534; }
+.label { font-size: 2rem; font-weight: 800; margin-bottom: 8px; }
+.confidence-text { margin-bottom: 12px; }
+
+.bar { height: 10px; background: rgba(0, 0, 0, 0.1); border-radius: 5px; overflow: hidden; }
+.bar-fill { height: 100%; width: 0; background: currentColor; transition: width 0.5s ease; }
+
+.error { margin-top: 16px; color: #b91c1c; text-align: center; font-weight: 600; }
+.hidden { display: none; }
+
+@media (max-width: 480px) {
+  .card { padding: 22px; }
+  .buttons { flex-direction: column; }
+  h1 { font-size: 1.5rem; }
+}
